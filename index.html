@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Customer Support</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🛠️ Customer Support Admin Panel</h1>
+            <p>Manage products, issues, and support tickets</p>
+        </div>
+
+        <div class="admin-content">
+            <!-- Products Management -->
+            <div class="admin-section">
+                <h2>📱 Products Management</h2>
+                <div class="admin-card">
+                    <h3>Add New Product</h3>
+                    <div class="admin-form">
+                        <div class="form-group">
+                            <label for="productName">Product Name:</label>
+                            <input type="text" id="productName" class="admin-input" placeholder="e.g., Premium Headphones">
+                        </div>
+                        <div class="form-group">
+                            <label for="productFields">Required Customer Fields:</label>
+                            <input type="text" id="productFields" class="admin-input" placeholder="e.g., Serial Number, Email Address, Purchase Date">
+                            <small>Separate multiple fields with commas</small>
+                        </div>
+                        <button class="admin-btn primary" id="productSubmitBtn" onclick="addProduct()">Add Product</button>
+                        <button class="admin-btn secondary" id="productCancelBtn" onclick="cancelProductEdit()" style="display: none;">Cancel Edit</button>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3>Current Products</h3>
+                    <div class="admin-list" id="productsList">
+                        <div class="empty-state">No products configured yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Issues Management -->
+            <div class="admin-section">
+                <h2>🔧 Common Issues Management</h2>
+                <div class="admin-card">
+                    <h3>Add New Issue & Solution</h3>
+                    <div class="admin-form">
+                        <div class="form-group">
+                            <label for="issueProduct">Product:</label>
+                            <select id="issueProduct" class="admin-input">
+                                <option value="">Select a product first</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="issueName">Issue Name:</label>
+                            <input type="text" id="issueName" class="admin-input" placeholder="e.g., Device won't turn on">
+                        </div>
+                        <div class="form-group">
+                            <label for="issueSolution">Solution Steps:</label>
+                            <textarea id="issueSolution" class="admin-input" placeholder="Enter each solution step on a new line" rows="5"></textarea>
+                            <small>Write each step on a new line</small>
+                        </div>
+                        <button class="admin-btn primary" onclick="addIssue()">Add Issue</button>
+                    </div>
+                </div>
+                
+                <div class="admin-card">
+                    <h3>Current Issues</h3>
+                    <div class="admin-list" id="issuesList">
+                        <div class="empty-state">No issues configured yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Tickets -->
+            <div class="admin-section">
+                <h2>🎫 Support Tickets</h2>
+                <div class="admin-card">
+                    <h3>Recent Tickets</h3>
+                    <div class="ticket-actions">
+                        <button class="admin-btn secondary" onclick="clearAllTickets()">Clear All Tickets</button>
+                        <button class="admin-btn secondary" onclick="exportTickets()">Export Tickets</button>
+                    </div>
+                    <div class="admin-list" id="ticketsList">
+                        <div class="empty-state">No support tickets yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="admin-section">
+                <h2>⚡ Quick Actions</h2>
+                <div class="admin-card">
+                    <div class="quick-actions">
+                        <button class="admin-btn warning" onclick="clearAllData()">Reset All Data</button>
+                        <button class="admin-btn secondary" onclick="exportAllData()">Export All Data</button>
+                        <a href="customer-chatbot.html" class="admin-btn primary" target="_blank">View Customer Interface</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
