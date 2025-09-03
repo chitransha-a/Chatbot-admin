@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support</title>
+    <link rel="stylesheet" href="customer-styles.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chat-header">
+            <h1>Customer Support</h1>
+            <p>We're here to help! Let's get your issue resolved quickly.</p>
+            <!-- ✅ Added Admin Panel link -->
+            <a href="https://iloft-chatbot-admin.vercel.app/" target="_blank" class="admin-link">
+                🔧 Go to Admin Panel
+            </a>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages"></div>
+        
+        <div class="chat-input-container">
+            <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        </div>
+    </div>
+
+    <script src="customer-script.js"></script>
+</body>
+</html>
